@@ -1,0 +1,61 @@
+.scroll-parent {
+  --speed: 10s;
+  --gap: 3em;
+
+  max-width: 100%;
+
+  display: flex;
+  overflow: hidden;
+  gap: var(--gap, 50px);
+  cursor: pointer;
+
+  -webkit-mask: linear-gradient(
+    to right,
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 20%,
+    hsl(0 0% 0% / 1) 80%,
+    hsl(0 0% 0% / 0)
+  );
+  mask: linear-gradient(
+    to right,
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 20%,
+    hsl(0 0% 0% / 1) 80%,
+    hsl(0 0% 0% / 0)
+  );
+}
+
+.scroll-element {
+  /* flex-shrink: 0; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--gap, 3em);
+  width: fit-content;
+  animation: slide var(--speed) linear infinite;
+}
+
+.scroll-parent:hover .scroll-element {
+  animation-play-state: paused;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap, 0px)));
+  }
+}
+
+.scroll-element span {
+  background-color: var(--foreground);
+  color: var(--text);
+  padding: 0.65rem;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+}
+
+.scroll-element span:hover {
+  background-color: var(--foreground);
+}

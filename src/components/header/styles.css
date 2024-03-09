@@ -1,0 +1,32 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: var(--background);
+
+  padding: 2rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+nav div.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+nav div.links a {
+  border: 2px solid var(--text);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: background-color 200ms;
+}
+
+nav div.links a:hover {
+  background-color: var(--foreground);
+}

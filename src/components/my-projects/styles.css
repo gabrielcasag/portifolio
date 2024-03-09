@@ -1,0 +1,58 @@
+.projects__list {
+  display: flex;
+  gap: 1rem;
+  list-style-type: none;
+  overflow-x: scroll;
+
+  position: relative;
+}
+
+.projects__list::-webkit-scrollbar {
+  display: none;
+}
+
+.project__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 192px;
+
+  background-color: var(--foreground);
+
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.project__card span {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+}
+
+#arrow__right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  animation: arrow 2s ease-in infinite;
+}
+
+@keyframes arrow {
+  0% {
+    right: 12px;
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
