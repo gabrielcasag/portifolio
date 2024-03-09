@@ -1,45 +1,54 @@
-import { InfiniteScroll } from '../infinite-scroll'
+import { InfiniteScroll } from "../infinite-scroll";
 
-import './styles.css'
+import "./styles.css";
 
 const skillsArray = [
   {
-    label: 'JavaScript',
-    icon: '',
+    label: "JavaScript",
+    icon: "",
+    color: "#998809",
   },
   {
-    label: 'HTML',
-    icon: '',
+    label: "HTML",
+    icon: "",
+    color: "#E34F26",
   },
   {
-    label: 'CSS',
-    icon: '',
+    label: "CSS",
+    icon: "",
+    color: "#1572B6",
   },
   {
-    label: 'Front-end',
-    icon: '',
+    label: "Front-end",
+    icon: "",
+    color: "#3D03A7",
   },
   {
-    label: 'Full stack',
-    icon: '',
+    label: "Full stack",
+    icon: "",
+    color: "#DB0A40",
   },
   {
-    label: 'ReactJS',
-    icon: '',
+    label: "ReactJS",
+    icon: "",
+    color: "#36a8c7",
   },
   {
-    label: 'WebDev',
-    icon: '',
+    label: "WebDev",
+    icon: "",
+    color: "#059377",
   },
   {
-    label: 'UX/UI',
-    icon: '',
+    label: "UX/UI",
+    icon: "",
+    color: "#003366",
   },
   {
-    label: 'Animations',
-    icon: '',
+    label: "Animations",
+    icon: "",
+    color: "#478509",
   },
-]
+];
 
 export function MySkills() {
   return (
@@ -48,5 +57,5 @@ export function MySkills() {
 
       <InfiniteScroll data={skillsArray} />
     </section>
-  )
+  );
 }

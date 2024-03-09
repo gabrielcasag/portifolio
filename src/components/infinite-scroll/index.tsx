@@ -10,7 +10,7 @@ interface InfiniteScrollProps {
 }
 
 function DataPill({ label, color }: DataPillItemProps) {
-  return <span data-color={color ?? ""}>{label}</span>;
+  return <span style={{ "--color": `${color}` }}>{label}</span>;
 }
 
 export function InfiniteScroll({ data }: InfiniteScrollProps) {

@@ -54,8 +54,12 @@
   padding: 0.65rem;
   border-radius: 0.5rem;
   white-space: nowrap;
+  font-weight: 600;
+
+  transition: background-color 300ms ease-in-out;
 }
 
 .scroll-element span:hover {
-  background-color: var(--foreground);
+  background-color: var(--color);
+  box-shadow: 0 1px 4px 0 var(--color);
 }

@@ -1,26 +1,30 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from 'react'
-import './styles.css'
+import { useEffect, useState } from "react";
+import { MapContainer, TileLayer } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+
+import "./styles.css";
 
 type GithubDataProps = {
-  name: string
-  bio: string
-  blog: string
-  avatar_url: string
-  location: string
-  hireable: boolean
-  company?: string
-}
+  name: string;
+  bio: string;
+  blog: string;
+  avatar_url: string;
+  location: string;
+  hireable: boolean;
+  company?: string;
+};
 
 export function AboutMe() {
-  const [ghData, setGhData] = useState<null | GithubDataProps>(null)
+  const [ghData, setGhData] = useState<null | GithubDataProps>(null);
+  const location = [-21.366, -45.5125]; // TODO: make this dynamic based on gh location
 
   useEffect(() => {
-    fetch('https://api.github.com/users/gabrielcasag')
+    fetch("https://api.github.com/users/gabrielcasag")
       .then((res) => res.json())
-      .then((data) => setGhData(data))
-  }, [])
+      .then((data) => setGhData(data));
+  }, []);
 
   return (
     <main>
@@ -36,7 +40,16 @@ export function AboutMe() {
         )}
       </div>
 
-      <div>geo location</div>
+      <div>
+        <MapContainer
+          center={location}
+          zoom={13}
+          style={{ height: "100%", width: "100%", borderRadius: "8px" }}
+        >
+          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+          {/* Additional map layers or components can be added here */}
+        </MapContainer>
+      </div>
     </main>
-  )
+  );
 }
